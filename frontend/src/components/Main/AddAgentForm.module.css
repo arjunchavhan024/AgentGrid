@@ -1,0 +1,80 @@
+/* AddAgentForm.module.css */
+
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.message {
+  background-color: #e0ffe0;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  color: #2e7d32;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submitBtn,
+.cancelBtn {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1;
+}
+
+.submitBtn {
+  background-color: #1976d2;
+  margin-right: 8px;
+}
+
+.cancelBtn {
+  background-color: #e53935;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .input {
+    font-size: 13px;
+  }
+
+  .submitBtn,
+  .cancelBtn {
+    padding: 8px;
+    font-size: 13px;
+  }
+}

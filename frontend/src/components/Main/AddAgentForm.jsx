@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import styles from "./AddAgentForm.module.css";
 
 const AddAgentForm = ({ onAgentAdded, onCancel }) => {
   const [form, setForm] = useState({
@@ -35,43 +36,17 @@ const AddAgentForm = ({ onAgentAdded, onCancel }) => {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "400px",
-        margin: "20px auto",
-        padding: "20px",
-        border: "1px solid #ddd",
-        borderRadius: "8px",
-        boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Add Agent</h2>
-      {message && (
-        <p
-          style={{
-            backgroundColor: "#e0ffe0",
-            padding: "10px",
-            borderRadius: "4px",
-            marginBottom: "15px",
-            color: "#2e7d32",
-            textAlign: "center",
-          }}
-        >
-          {message}
-        </p>
-      )}
-      <form
-        onSubmit={handleSubmit}
-        style={{ display: "flex", flexDirection: "column" }}
-      >
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Add Agent</h2>
+      {message && <p className={styles.message}>{message}</p>}
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
           name="name"
           placeholder="Name"
           value={form.name}
           onChange={handleChange}
           required
-          style={inputStyle}
+          className={styles.input}
         />
         <input
           name="email"
@@ -79,7 +54,7 @@ const AddAgentForm = ({ onAgentAdded, onCancel }) => {
           value={form.email}
           onChange={handleChange}
           required
-          style={inputStyle}
+          className={styles.input}
         />
         <input
           name="mobile"
@@ -87,7 +62,7 @@ const AddAgentForm = ({ onAgentAdded, onCancel }) => {
           value={form.mobile}
           onChange={handleChange}
           required
-          style={inputStyle}
+          className={styles.input}
         />
         <input
           type="password"
@@ -96,53 +71,19 @@ const AddAgentForm = ({ onAgentAdded, onCancel }) => {
           value={form.password}
           onChange={handleChange}
           required
-          style={inputStyle}
+          className={styles.input}
         />
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <button
-            type="submit"
-            style={{
-              padding: "10px",
-              backgroundColor: "#1976d2",
-              color: "white",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-              fontWeight: "bold",
-              flex: 1,
-              marginRight: "8px",
-            }}
-          >
+        <div className={styles.buttonGroup}>
+          <button type="submit" className={styles.submitBtn}>
             Add Agent
           </button>
-          <button
-            type="button"
-            onClick={onCancel}
-            style={{
-              padding: "10px",
-              backgroundColor: "#e53935",
-              color: "white",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-              fontWeight: "bold",
-              flex: 1,
-            }}
-          >
+          <button type="button" onClick={onCancel} className={styles.cancelBtn}>
             Cancel
           </button>
         </div>
       </form>
     </div>
   );
-};
-
-const inputStyle = {
-  padding: "10px",
-  marginBottom: "12px",
-  borderRadius: "4px",
-  border: "1px solid #ccc",
-  fontSize: "14px",
 };
 
 export default AddAgentForm;
