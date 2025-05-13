@@ -6,6 +6,7 @@ const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const agentRoutes = require("./routes/agentRoutes");
+const uploadRoutes = require("./routes/distribute.js"); // adjust path
 
 // Connection
 connection();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/agents", agentRoutes);
+app.use("/api", uploadRoutes); // makes POST /api/upload available
 
 const port = process.env.PORT || 8080;
 
